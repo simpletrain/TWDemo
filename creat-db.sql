@@ -26,6 +26,13 @@ CREATE TABLE IF NOT EXISTS student_subject(
  subject_id int(4) not null
 );
 
+CREATE VIEW schedule AS (
+  SELECT student.student_name AS '学生姓名',
+  subject.subject_name AS '科目'
+  FROM student,subject,student_subject
+  WHERE student.student_id = student_subject.student_id AND subject.subject_id = student_subject.subject_id
+);
+
 ALTER TABLE student
 ADD CONSTRAINT fk_student_class
 FOREIGN KEY (class_id)
