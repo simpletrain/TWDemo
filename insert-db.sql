@@ -32,7 +32,7 @@ BEGIN
 DECLARE i int;
 SET i = 0;
 WHILE i < 50 do
-INSERT INTO student(student_name,student_sex,class_id) VALUES(concat("student", i),IF(i%2=0,"boy","girl"),i%5+1);
+INSERT INTO student(student_name,student_sex,class_id) VALUES(concat("student", i),IF(i%2=0,"male","female"),i%5+1);
 SET i = i + 1;
 END while;
 END //
