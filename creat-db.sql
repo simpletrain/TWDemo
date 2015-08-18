@@ -36,14 +36,14 @@ CREATE VIEW schedule AS (
 ALTER TABLE student
 ADD CONSTRAINT fk_student_class
 FOREIGN KEY (class_id)
-REFERENCES class(class_id);
+REFERENCES class(class_id) ON DELETE CASCADE;
 
 ALTER TABLE student_subject
 ADD CONSTRAINT fk_student_student_subject
 FOREIGN KEY (student_id)
-REFERENCES student(student_id);
+REFERENCES student(student_id) ON DELETE CASCADE;
 
 ALTER TABLE student_subject
 ADD CONSTRAINT fk_subject_student_subject
 FOREIGN KEY (subject_id)
-REFERENCES subject(subject_id);
+REFERENCES subject(subject_id) ON DELETE CASCADE;
